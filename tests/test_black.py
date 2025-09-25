@@ -2472,7 +2472,7 @@ class TestFileCollection:
         exclude = re.compile(r"")
         report = black.Report()
         gitignore = PathSpec.from_lines(
-            "gitwildmatch", ["exclude/", ".definitely_exclude"]
+            "gitignore", ["exclude/", ".definitely_exclude"]
         )
         sources: list[Path] = []
         expected = [
