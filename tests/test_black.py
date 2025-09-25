@@ -2472,7 +2472,7 @@ class TestFileCollection:
         exclude = re.compile(r"")
         report = black.Report()
         gitignore = PathSpec.from_lines(
-            "gitwildmatch", ["exclude/", ".definitely_exclude"]
+            "gitignore", ["exclude/", ".definitely_exclude"]
         )
         sources: list[Path] = []
         expected = [
@@ -2647,7 +2647,7 @@ class TestFileCollection:
         include = re.compile(black.DEFAULT_INCLUDES)
         exclude = re.compile(black.DEFAULT_EXCLUDES)
         report = black.Report()
-        gitignore = PathSpec.from_lines("gitwildmatch", [])
+        gitignore = PathSpec.from_lines("gitignore", [])
 
         regular = MagicMock()
         regular.relative_to.return_value = Path("regular.py")
