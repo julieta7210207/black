@@ -246,7 +246,7 @@ def get_gitignore(root: Path) -> PathSpec:
         with gitignore.open(encoding="utf-8") as gf:
             lines = gf.readlines()
     try:
-        return PathSpec.from_lines("gitwildmatch", lines)
+        return PathSpec.from_lines("gitignore", lines)
     except GitWildMatchPatternError as e:
         err(f"Could not parse {gitignore}: {e}")
         raise

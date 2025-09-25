@@ -111,6 +111,12 @@ class FakeParameter(click.Parameter):
     def __init__(self) -> None:
         pass
 
+    def _parse_decls(self, prog_name: str, standalone_mode: bool) -> tuple:
+        return (), False
+
+    def add_to_parser(self, parser: click.OptionParser, ctx: click.Context) -> None:
+        pass
+
 
 class BlackRunner(CliRunner):
     """Make sure STDOUT and STDERR are kept separate when testing Black via its CLI."""
